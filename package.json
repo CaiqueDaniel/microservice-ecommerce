@@ -1,0 +1,20 @@
+{
+  "name": "ecommerce-microservices",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "vitest": "^2.1.4"
+  },
+  "dependencies": {
+    "typescript": "^5.6.3"
+  }
+}
