@@ -1,4 +1,4 @@
-import { Product } from "src/modules/products/domain/Product";
+import { Product } from "src/core/modules/products/domain/Product";
 
 export class ProductBuilder {
   private name = "Caderno";

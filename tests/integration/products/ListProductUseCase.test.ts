@@ -1,5 +1,5 @@
-import { ListProductUseCase } from "src/modules/products/application/ListProductUseCase";
-import { ProductRepository } from "src/modules/products/domain/ProductRepository";
+import { ListProductUseCase } from "src/core/modules/products/application/ListProductUseCase";
+import { ProductRepository } from "src/core/modules/products/domain/ProductRepository";
 import { ProductBuilder } from "tests/fixtures/ProductFixture";
 import { Mocked } from "vitest";
 

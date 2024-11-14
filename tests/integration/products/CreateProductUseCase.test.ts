@@ -1,6 +1,6 @@
-import { CreateProductUseCase } from "src/modules/products/application/CreateProductUseCase";
-import { DefaultProductFactory } from "src/modules/products/application/DefaultProductFactory";
-import { ProductRepository } from "src/modules/products/domain/ProductRepository";
+import { CreateProductUseCase } from "src/core/modules/products/application/CreateProductUseCase";
+import { DefaultProductFactory } from "src/core/modules/products/application/DefaultProductFactory";
+import { ProductRepository } from "src/core/modules/products/domain/ProductRepository";
 
 describe("CreateProductUseCase integration tests", () => {
   let sut: CreateProductUseCase;
