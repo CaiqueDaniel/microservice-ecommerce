@@ -1,6 +1,6 @@
 import { GetProductUseCase } from "src/modules/products/application/GetProductUseCase";
 import { ProductRepository } from "src/modules/products/domain/ProductRepository";
-import { NotFoundError } from "src/shared/application/NotFoundError";
+import { NotFoundError } from "src/core/shared/application/NotFoundError";
 import { ProductBuilder } from "tests/fixtures/ProductFixture";
 import { Mocked } from "vitest";
 

@@ -1,6 +1,6 @@
-import { UseCase } from "src/shared/application/UseCase";
+import { UseCase } from "src/core/shared/application/UseCase";
 import { ProductRepository } from "../domain/ProductRepository";
-import { NotFoundError } from "src/shared/application/NotFoundError";
+import { NotFoundError } from "src/core/shared/application/NotFoundError";
 
 export class GetProductUseCase implements UseCase<Input, Promise<Output>> {
   constructor(private readonly repository: ProductRepository) {}
