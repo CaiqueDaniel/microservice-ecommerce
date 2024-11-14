@@ -17,7 +17,7 @@ describe("ListProductUseCase integration tests", () => {
     sut = new ListProductUseCase(repository);
   });
 
-  it("should be able to create a product", async () => {
+  it("should be able to list products", async () => {
     repository.all.mockImplementationOnce(async () => [
       ProductBuilder.aProduct().build(),
     ]);
