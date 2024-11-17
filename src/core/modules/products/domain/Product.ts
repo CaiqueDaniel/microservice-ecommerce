@@ -1,4 +1,5 @@
-import { Entity } from "../../../shared/domain/Entity";
+import { Entity } from '../../../shared/domain/Entity';
+import { ProductValidationRules } from './ProductValidationRules';
 
 export class Product extends Entity {
   constructor(
@@ -7,9 +8,14 @@ export class Product extends Entity {
     private _description: string,
     private _price: number,
     private _quantity: number,
-    private _offerPrice?: number
+    private _offerPrice?: number,
   ) {
     super(id);
+    this.validate();
+  }
+
+  private validate() {
+    super.validateWith(new ProductValidationRules(this));
   }
 
   get name() {
