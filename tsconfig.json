@@ -20,5 +20,8 @@
     "types": [
       "vitest/globals"
     ]
+  },
+  "watchOptions": {
+    "watchFile": "fixedPollingInterval"
   }
 }
