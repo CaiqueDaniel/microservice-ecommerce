@@ -3,6 +3,7 @@ import { CreateProductUseCase } from 'src/core/modules/products/application/Crea
 import { DefaultProductFactory } from 'src/core/modules/products/application/DefaultProductFactory';
 import { GetProductUseCase } from 'src/core/modules/products/application/GetProductUseCase';
 import { ListProductUseCase } from 'src/core/modules/products/application/ListProductUseCase';
+import { UpdateProductUseCase } from 'src/core/modules/products/application/UpdateProductUseCase';
 import { ProductRepository } from 'src/core/modules/products/domain/ProductRepository';
 import { MemoryProductRepository } from 'src/infrastructure/persistence/memory/product/MemoryProductRepository';
 
@@ -15,6 +16,12 @@ export const productProviders: Provider[] = [
     provide: CreateProductUseCase,
     useFactory: (repository: ProductRepository) =>
       new CreateProductUseCase(repository, new DefaultProductFactory()),
+    inject: ['ProductRepository'],
+  },
+  {
+    provide: UpdateProductUseCase,
+    useFactory: (repository: ProductRepository) =>
+      new UpdateProductUseCase(repository, new DefaultProductFactory()),
     inject: ['ProductRepository'],
   },
   {

@@ -1,4 +1,5 @@
 import { Product } from 'src/core/modules/products/domain/Product';
+import { ProductBuilder } from 'tests/fixtures/ProductFixture';
 
 describe('Product entity unit tests', () => {
   const data = {
@@ -60,5 +61,33 @@ describe('Product entity unit tests', () => {
     };
 
     expect(action).toThrowError();
+  });
+
+  describe('update method', () => {
+    const updatedData = {
+      name: 'name 2',
+      description: 'description 2',
+      price: 314,
+      quantity: 1,
+      offerPrice: undefined,
+    };
+
+    it('should be able to update', () => {
+      const product = ProductBuilder.aProduct().build();
+
+      product.update(
+        updatedData.name,
+        updatedData.description,
+        updatedData.price,
+        updatedData.quantity,
+        updatedData.offerPrice,
+      );
+
+      expect(product.name).toBe(updatedData.name);
+      expect(product.description).toBe(updatedData.description);
+      expect(product.price).toBe(updatedData.price);
+      expect(product.quantity).toBe(updatedData.quantity);
+      expect(product.offerPrice).toBe(updatedData.offerPrice);
+    });
   });
 });

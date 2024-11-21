@@ -1,5 +1,5 @@
-import { Product } from "src/core/modules/products/domain/Product";
-import { ProductRepository } from "src/core/modules/products/domain/ProductRepository";
+import { Product } from 'src/core/modules/products/domain/Product';
+import { ProductRepository } from 'src/core/modules/products/domain/ProductRepository';
 
 export class MemoryProductRepository implements ProductRepository {
   private items: Map<string, Product> = new Map();
@@ -18,5 +18,9 @@ export class MemoryProductRepository implements ProductRepository {
 
   async all(): Promise<Product[]> {
     return Array.from(this.items.values());
+  }
+
+  clear() {
+    this.items.clear();
   }
 }

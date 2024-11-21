@@ -14,6 +14,21 @@ export class Product extends Entity {
     this.validate();
   }
 
+  update(
+    name: string,
+    description: string,
+    price: number,
+    quantity: number,
+    offerPrice?: number,
+  ) {
+    this._name = name;
+    this._description = description;
+    this._price = price;
+    this._quantity = quantity;
+    this._offerPrice = offerPrice;
+    this.validate();
+  }
+
   private validate() {
     super.validateWith(new ProductValidationRules(this));
   }

@@ -1,4 +1,4 @@
-api-product-dev:
+dev:
 	docker compose up -d
 	docker logs ecommerce-microservices-product-api-1 -f
 
