@@ -12,3 +12,14 @@ services:
     ports:
       - "3000:3000"
     command: sh -c "npm config set strict-ssl false && npm ci && npm run start:dev"
+  
+  order-api:
+    image: golang:1.23
+    working_dir: /usr/src/app
+    volumes:
+      - ./order-api:/usr/src/app
+    expose:
+      - "1323"
+    ports:
+      - "1323:1323"
+    command: go run main.go

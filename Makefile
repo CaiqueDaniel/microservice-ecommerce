@@ -1,9 +1,11 @@
 dev:
 	docker compose up -d
-	docker logs ecommerce-microservices-product-api-1 -f
 
 api-product-dev-sh:
 	docker exec -it ecommerce-microservices-product-api-1 sh
 
-api-product-dev-down:
+api-order-dev-sh:
+	docker exec -it ecommerce-microservices-order-api-1 sh
+
+dev-down:
 	docker compose down
