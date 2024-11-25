@@ -45,3 +45,13 @@ func (entity *Order) GetStatus() string {
 func (entity *Order) GetPaymentMethod() string {
 	return entity.paymentMethod.ToString()
 }
+
+func (entity *Order) GetProducts() []Product {
+	products := make([]Product, 0)
+
+	for _, product := range entity.products {
+		products = append(products, *product)
+	}
+
+	return products
+}
