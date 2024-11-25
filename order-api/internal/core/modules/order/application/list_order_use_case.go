@@ -4,7 +4,7 @@ import (
 	"order-api/internal/core/modules/order/domain"
 )
 
-func ListOrderUseCase(repository domain.OrderRepository) func() []ListOrderUseCaseOutput {
+func NewListOrderUseCase(repository domain.OrderRepository) ListOrderUseCase {
 	return func() []ListOrderUseCaseOutput {
 		return toOutput(repository.All())
 	}
@@ -35,6 +35,8 @@ func toOutput(orders []domain.Order) []ListOrderUseCaseOutput {
 
 	return result
 }
+
+type ListOrderUseCase func() []ListOrderUseCaseOutput
 
 type ListOrderUseCaseOutput struct {
 	Id            string

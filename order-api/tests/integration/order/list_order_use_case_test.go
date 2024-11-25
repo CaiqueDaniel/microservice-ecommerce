@@ -9,7 +9,7 @@ import (
 
 func TestItShouldBeAbleToListOrders(t *testing.T) {
 	repository := persistence.NewMemoryOrderRepository()
-	sut := application.ListOrderUseCase(repository)
+	sut := application.NewListOrderUseCase(repository)
 	order, _ := domain.NewOrder("money")
 
 	repository.Save(*order)

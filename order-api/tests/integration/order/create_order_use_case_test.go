@@ -10,7 +10,7 @@ import (
 
 func TestItShouldBeAbleToCreateAOrder(t *testing.T) {
 	repository := persistence.NewMemoryOrderRepository()
-	sut := application.CreateOrderUseCase(repository)
+	sut := application.NewCreateOrderUseCase(repository)
 
 	sut(application.CreateOrderUseCaseInput{
 		PaymentMethod: "credit card",
@@ -25,7 +25,7 @@ func TestItShouldBeAbleToCreateAOrder(t *testing.T) {
 
 func TestItShouldNotBeAbleToCreateAInvalidOrder(t *testing.T) {
 	repository := persistence.NewMemoryOrderRepository()
-	sut := application.CreateOrderUseCase(repository)
+	sut := application.NewCreateOrderUseCase(repository)
 
 	sut(application.CreateOrderUseCaseInput{
 		PaymentMethod: "invalid",

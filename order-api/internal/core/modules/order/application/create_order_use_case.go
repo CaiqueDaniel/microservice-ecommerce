@@ -4,7 +4,7 @@ import (
 	"order-api/internal/core/modules/order/domain"
 )
 
-func CreateOrderUseCase(repository domain.OrderRepository) func(input CreateOrderUseCaseInput) error {
+func NewCreateOrderUseCase(repository domain.OrderRepository) CreateOrderUseCase {
 	return func(input CreateOrderUseCaseInput) error {
 		order, err := domain.NewOrder(input.PaymentMethod)
 
@@ -17,6 +17,8 @@ func CreateOrderUseCase(repository domain.OrderRepository) func(input CreateOrde
 		return nil
 	}
 }
+
+type CreateOrderUseCase func(input CreateOrderUseCaseInput) error
 
 type CreateOrderUseCaseInput struct {
 	PaymentMethod string
